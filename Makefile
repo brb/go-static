@@ -4,7 +4,7 @@ GO ?= go
 all: main
 
 main: libsum.a main.a
-	$(GO) tool 6l -o $@ main.a
+	$(GO) tool 6l -o $@ -linkmode external -extldflags=-static main.a
 
 libsum.a: sum.o
 	ar rcs $@ $?
@@ -19,7 +19,7 @@ main.6: main.go
 	$(GO) tool 6g $?
 
 wrap.6: wrap.s
-	$(GO) tool 6a $?
+	$(GO) tool old6a $?
 
 clean:
 	rm -f main *.a *.o *.6
