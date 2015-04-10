@@ -13,7 +13,7 @@ sum.o: sum.c
 	$(CC) -static -nostdlib -o $@ -c $?
 
 main.a: main.6 wrap.6
-	$(GO) tool pack c $@ $?
+	$(GO) tool pack c $@ main.6 wrap.6
 
 main.6: main.go
 	$(GO) tool 6g $?
