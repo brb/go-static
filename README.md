@@ -9,4 +9,4 @@ Requires [go1.4beta1-1732-g9b69196](https://github.com/golang/go/tree/9b69196958
 
 Thanks to Solaris port which implemented SysV ABI compatible wrappers.
 
-Demo: `make`.
+Demo: `make && ./main`.
